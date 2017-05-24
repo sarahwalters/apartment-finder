@@ -1,5 +1,4 @@
 ## Apartment finder
--------------------
 
 Forked from [VikParuchuri/apartment-finder](https://github.com/VikParuchuri/apartment-finder).
 
@@ -21,8 +20,9 @@ Look in `settings.py` for a full list of all the configuration options.  Here's 
 
 Read more about the original author's use of the tool [here](https://www.dataquest.io/blog/apartment-finding-slackbot/).
 
+---------------------
+
 ### External Setup
---------------------
 
 Before using this bot, you'll need a Slack team, a channel for the bot to post into, and a Slack API key. If you're accessing an existing apartment-finder bot, these things already exist and you don't need to create them.
 
@@ -30,8 +30,9 @@ Before using this bot, you'll need a Slack team, a channel for the bot to post i
 * Create a channel for the listings to be posted into.  [Here's](https://get.slack.help/hc/en-us/articles/201402297-Creating-a-channel) help on this. It's suggested to use `#housing` as the name of the channel.
 * Get a Slack API token, which you can do [here](https://api.slack.com/docs/oauth-test-tokens).  [Here's](https://get.slack.help/hc/en-us/articles/215770388-Creating-and-regenerating-API-tokens) more information on the process.
 
+---------------------
+
 ### Running Locally
---------------------
 
 #### Setting up your machine:
 * Install Docker by following [these instructions](https://docs.docker.com/engine/installation/).
@@ -45,8 +46,9 @@ Before using this bot, you'll need a Slack team, a channel for the bot to post i
 ### Running the program:
 * From the `apartment-finder` directory: `./bin/run.sh`
 
-### Deploying to AWS
 ---------------------
+
+### Deploying to AWS
 
 #### Setting up a new EC2 instance:
 * Launch an EC2 instance, following [these instructions](http://www.ybrikman.com/writing/2015/11/11/running-docker-aws-ground-up/#launching-an-ec2-instance) (just the "Launching an EC2 Instance" and "Installing Docker" sections).
@@ -64,8 +66,9 @@ You should've been given a key pair (extension `.pem`) and a public IP address f
 #### Running the program:
 * ssh into an EC2 instance, cd to the `apartment-finder` directory, then `./bin/run.sh`
 
-### Configuration
 --------------------
+
+### Configuration
 
 **If you've been given an existing config directory, you can skip these steps.**
 
@@ -88,8 +91,9 @@ Otherwise, to create a new config directory:
     * Paste the following line into `credentials.list`: `SLACK_TOKEN=<token>`
     * Replace <token> with your Slack token (see "External Setup")
 
-### Troubleshooting
 ---------------------
+
+### Troubleshooting
 
 * Use `docker ps` to get the id of the container running the bot.
 * Run `docker exec -it {YOUR_CONTAINER_ID} /bin/bash` to get a command shell inside the container.

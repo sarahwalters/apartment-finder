@@ -41,9 +41,10 @@ Before using this bot, you'll need a Slack team, a channel for the bot to post i
     * `sudo gpasswd -a <USERNAME> docker` (replace <USERNAME> with your own username)
     * Log out and back in
     * `sudo service docker restart`
-* Create a configuration directory in, or copy an existing configuration directory into, the `apartment-finder` directory. See "Configuration".
+* Create a `config` directory in, or copy an existing `config` directory into, the `apartment-finder` directory.
+    * See "Configuration" if you need to create a `config` directory.
 
-### Running the program:
+#### Running the program:
 * From the `apartment-finder` directory: `./bin/run.sh`
 
 ---------------------
@@ -56,7 +57,8 @@ Before using this bot, you'll need a Slack team, a channel for the bot to post i
 * While still ssh'd into the instance, clone the apartment-finder repository:
     * `sudo yum install git`
     * `git clone https://github.com/sarahwalters/apartment-finder.git`
-* Exit the instance. Then, copy a `config` directory into the instance (if you don't have a `config` directory yet, see "Configuration"):
+* Exit the instance. Then, copy a `config` directory into the instance.
+    * See "Configuration" if you need to create a `config` directory.
     * `scp -r -i <PATH-TO-EC2-KEY-PAIR.pem> <PATH-TO-CONFIG-DIRECTORY> ec2-user@<EC2-INSTANCE-PUBLIC-IP-ADDRESS>:~/apartment-finder/.`
 
 #### Accessing an existing EC2 instance:

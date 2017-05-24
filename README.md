@@ -52,6 +52,7 @@ Before using this bot, you'll need a Slack team, a channel for the bot to post i
 ### Deploying to AWS
 
 #### Setting up a new EC2 instance:
+**If you want to access an existing EC2 instance, you can skip these steps.**
 * Launch an EC2 instance, following [these instructions](http://www.ybrikman.com/writing/2015/11/11/running-docker-aws-ground-up/#launching-an-ec2-instance) (just the "Launching an EC2 Instance" and "Installing Docker" sections).
     * Once you've run the "hello world" example, clean up: run `docker ps` to get the id of the `training/webapp` container, then `docker kill <CONTAINER-ID>` to kill the container.
 * While still ssh'd into the instance, clone the apartment-finder repository:
@@ -60,13 +61,19 @@ Before using this bot, you'll need a Slack team, a channel for the bot to post i
 * Exit the instance. Then, copy a `config` directory into the instance.
     * See "Configuration" if you need to create a `config` directory.
     * `scp -r -i <PATH-TO-EC2-KEY-PAIR.pem> <PATH-TO-CONFIG-DIRECTORY> ec2-user@<EC2-INSTANCE-PUBLIC-IP-ADDRESS>:~/apartment-finder/.`
+* ssh into an EC2 instance, cd to the `apartment-finder` directory, then `./bin/run.sh`
 
 #### Accessing an existing EC2 instance:
-You should've been given a key pair (extension `.pem`) and a public IP address for the existing EC2 instance.
+You should have a key pair (extension `.pem`) and a public IP address for the EC2 instance.
 * ssh into the instance: `ssh -i <PATH-TO-EC2-KEY-PAIR.pem> ec2-user@<EC2-INSTANCE-PUBLIC-IP-ADDRESS>`
 
-#### Running the program:
-* ssh into an EC2 instance, cd to the `apartment-finder` directory, then `./bin/run.sh`
+#### Modifying the program on an existing EC2 instance:
+* Make modifications locally and push to [sarahwalters/apartment-finder](https://github.com/sarahwalters/apartment-finder).
+* ssh into an EC2 instance, then:
+    * kill the existing container: run `docker ps` to get its id, then `docker kill <CONTAINER-ID>`
+    * cd to the `apartment-finder` directory
+    * `git pull` to get the modifications
+    * Re-run the program: `./bin/run.sh`
 
 --------------------
 

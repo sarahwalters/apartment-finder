@@ -107,7 +107,7 @@ Otherwise, to create a new config directory:
 * Use `docker ps` to get the id of the container running the bot.
 * Run `docker exec -it {YOUR_CONTAINER_ID} /bin/bash` to get a command shell inside the container.
 * From the command shell inside the container:
-    * Run `sqlite listings.db` to run the sqlite command line tool and inspect the database state (the only table is also called `listings`).
+    * Run `sqlite3 listings.db` to run the sqlite command line tool and inspect the database state (the only table is also called `listings`).
         * `select * from listings` will get all of the stored listings.
         * If nothing is in the database, you may need to wait for a bit, or verify that your settings aren't too restrictive and aren't finding any listings.
         * You can see how many listings are being found by looking at the logs.

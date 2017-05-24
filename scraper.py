@@ -57,6 +57,7 @@ def scrape_area(area):
         except Exception:
             continue
         listing = session.query(Listing).filter_by(cl_id=result["id"]).first()
+        print(listing)
 
         # Don't store the listing if it already exists.
         if listing is None:

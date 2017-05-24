@@ -57,7 +57,7 @@ Before using this bot, you'll need a Slack team, a channel for the bot to post i
     * `sudo yum install git`
     * `git clone https://github.com/sarahwalters/apartment-finder.git`
 * Exit the instance. Then, copy a `config` directory into the instance (if you don't have a `config` directory yet, see "Configuration"):
-    * scp -r -i <PATH-TO-EC2-KEY-PAIR.pem> <PATH-TO-CONFIG-DIRECTORY> ec2-user@<EC2-INSTANCE-PUBLIC-IP-ADDRESS>:~/apartment-finder/.
+    * `scp -r -i <PATH-TO-EC2-KEY-PAIR.pem> <PATH-TO-CONFIG-DIRECTORY> ec2-user@<EC2-INSTANCE-PUBLIC-IP-ADDRESS>:~/apartment-finder/.`
 
 #### Accessing an existing EC2 instance:
 You should've been given a key pair (extension `.pem`) and a public IP address for the existing EC2 instance.
@@ -88,8 +88,8 @@ Otherwise, to create a new config directory:
             * `MIN_PRICE`
             * `MAX_PRICE`
 * Create a file inside `config` called `credentials.list`.
-    * Paste the following line into `credentials.list`: `SLACK_TOKEN=<token>`
-    * Replace <token> with your Slack token (see "External Setup")
+    * Paste the following line into the credentials file: `SLACK_TOKEN=<token>`
+    * Replace `<token>` with your Slack token (see "External Setup")
 
 ---------------------
 

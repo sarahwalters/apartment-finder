@@ -56,6 +56,7 @@ def scrape_area(area):
             break
         except Exception:
             continue
+        print(result)
         listing = session.query(Listing).filter_by(cl_id=result["id"]).first()
         print(listing)
 

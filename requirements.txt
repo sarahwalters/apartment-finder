@@ -1,5 +1,9 @@
-python-craigslist>=1.0.3
-sqlalchemy
-python-dateutil
+appdirs
 ipython
+packaging
+pyparsing
+python-craigslist>=1.0.3
+python-dateutil
+six>=1.6.0
 slackclient
+sqlalchemy

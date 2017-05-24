@@ -92,3 +92,4 @@ ENV/
 .idea/
 private.py
 listings.db
+credentials.list

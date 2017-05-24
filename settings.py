@@ -1,3 +1,7 @@
+"""
+Default settings. Can be overrridden in a config/private.py file.
+"""
+
 import os
 
 ## Price
@@ -7,6 +11,11 @@ MIN_PRICE = 1500
 
 # The maximum rent you want to pay per month.
 MAX_PRICE = 2000
+
+## Size
+
+# The number of bedrooms.
+BEDROOMS = 1
 
 ## Location preferences
 
@@ -113,12 +122,6 @@ SLACK_CHANNEL = "#housing"
 # The token that allows us to connect to slack.
 # Should be put in private.py, or set as an environment variable.
 SLACK_TOKEN = os.getenv('SLACK_TOKEN', "")
-
-# Any private settings are imported here.
-try:
-    from private import *
-except Exception:
-    pass
 
 # Any external private settings are imported from here.
 try:
